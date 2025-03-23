@@ -6,8 +6,7 @@ from torchvision import transforms
 from PIL import Image
 from sklearn.metrics import classification_report
 
-def load_model(model_path="./Model/shape_classifier.pth"):
-    _, _, classes = get_data_loaders()
+def load_model(model_path, classes):
     model = ShapeClassifier(num_classes=len(classes))
     model.load_state_dict(torch.load(model_path))
     model.eval()
@@ -43,8 +42,8 @@ def evaluate_model(model, test_loader, classes):
     print(classification_report(y_true, y_pred, target_names=classes))
 
 if __name__ == "__main__":
-    model, classes = load_model()
-    _, test_loader, _ = get_data_loaders()
+    _, test_loader, classes = get_data_loaders("Dataset", 32, 0.8)
+    model, classes = load_model("./Model/shape_classifier.pth", classes)
 
     # Evaluasi model
     evaluate_model(model, test_loader, classes)
