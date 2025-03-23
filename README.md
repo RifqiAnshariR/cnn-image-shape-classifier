@@ -32,7 +32,17 @@ python test.py
 ```
 
 # ➕ Miscellaneous  
-- 
+- Classification report:
+
+| Class       | Precision | Recall | F1-Score | Support |
+|------------|-----------|--------|----------|---------|
+| **Circle**    | 0.95      | 0.97   | 0.96     | 37      |
+| **Rectangle** | 0.98      | 0.96   | 0.97     | 45      |
+| **Triangle**  | 1.00      | 1.00   | 1.00     | 38      |
+
+- Overall Metrics:
+
+**Accuracy**: 0.97 (120 samples), **Macro Avg**: Precision 0.97, Recall 0.98, F1-Score 0.98, **Weighted Avg**: Precision 0.98, Recall 0.97, F1-Score 0.98
 
 ---  
 Made with ❤️!
